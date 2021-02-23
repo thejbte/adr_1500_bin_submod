@@ -1,0 +1,13 @@
+[Unit]
+Description=Service run process client IDAC ADR 1500 project
+
+
+[Service]
+Type=simple
+Wants = network-online.target
+After = network.target network-online.target
+ExecStart=/home/pi/idac_adr_bin/Idac_Adr_1500_client_http 5
+Restart=always
+RestartSec=5
+[Install]
+WantedBy=multi-user.target

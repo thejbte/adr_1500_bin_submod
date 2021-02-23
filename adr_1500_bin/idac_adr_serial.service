@@ -1,0 +1,13 @@
+[Unit]
+Description=Service run process serial IDAC ADR 1500 project
+
+
+[Service]
+Type=simple
+Wants = network-online.target
+After = network.target network-online.target
+ExecStart=/home/pi/idac_adr_bin/adr_1500_serial ttyUSB0 19200
+Restart=always
+RestartSec=5
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Service run process monitor reset IDAC ADR 1500 project
+
+
+[Service]
+Type=simple
+Wants = network-online.target
+After = network.target network-online.target
+ExecStart=/home/pi/idac_adr_bin/idac_adr_monitor_reset 180.0
+Restart=always
+RestartSec=5
+[Install]
+WantedBy=multi-user.target
